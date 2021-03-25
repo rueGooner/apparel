@@ -1,0 +1,20 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "mongoose",
+      "settings": {
+        "database": "apparel-db",
+        "host": "cluster0.dxb4x.mongodb.net",
+        "srv": "true",
+        "port": 27017,
+        "username": "root",
+        "password": "i6a8uejKJc!!"
+      },
+      "options": {
+        "authenticationDatabase": "admin",
+        "ssl": true
+      }
+    }
+  }
+}
