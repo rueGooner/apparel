@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brands",
+  "info": {
+    "name": "Brand"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "products": {
+      "collection": "product"
+    }
+  }
+}

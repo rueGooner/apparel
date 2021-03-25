@@ -9,7 +9,7 @@
     "timestamps": true
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
     "product_description": {
