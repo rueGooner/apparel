@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colours",
+  "info": {
+    "name": "Colour"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "products": {
+      "via": "colours",
+      "collection": "product",
+      "dominant": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_available_sizes",
+  "info": {
+    "name": "available_sizes",
+    "icon": "tshirt"
+  },
+  "options": {},
+  "attributes": {
+    "extra_small": {
+      "type": "boolean"
+    },
+    "small": {
+      "type": "boolean"
+    },
+    "medium": {
+      "type": "boolean"
+    },
+    "large": {
+      "type": "boolean"
+    },
+    "extra_large": {
+      "type": "boolean"
+    }
+  }
+}
