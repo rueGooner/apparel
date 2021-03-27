@@ -29,7 +29,9 @@
       "path": "/products",
       "handler": "product.create",
       "config": {
-        "policies": []
+        "policies": [
+          "global::isAuthenticated"
+        ]
       }
     },
     {
