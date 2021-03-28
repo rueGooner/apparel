@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from './Header'
 import Navigation from './Navigation'
 
-export default function Layout({ children }) {
+export default function Layout({ children, navItems }) {
   return (
     <div className="mx-auto px-10 min-h-screen h-screen">
       <Head>
@@ -10,7 +10,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Navigation />
+      <Navigation navItems={navItems} />
 
       <main className="min-h-full flex flex-col items-center justify-center">
         <h1 className="">

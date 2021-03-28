@@ -48,7 +48,7 @@ function generateProduct() {
     sizes: faker.random.arrayElements(sizes),
     colours: faker.random.arrayElements(colours),
     brand: faker.random.arrayElement(brands),
-    category: faker.random.arrayElements(categories),
+    categories: faker.random.arrayElements(categories),
     featured: faker.random.boolean(),
     sale: faker.random.boolean(),
     main_image: faker.random.image(),
@@ -60,16 +60,16 @@ function generateProduct() {
 module.exports = {
   async create(ctx) {
     console.log('LOG THE TING');
-    // let products = [];
-    // for (let i = 0; i < faker.random.number({ min: 1000, max: 3000 }); i++) {
-    //   products.push(generateProduct());
-    // }
-    // try {
-    //   const found = await strapi.query('product').model.find();
-    //   console.log(found.length);
-    //   // await strapi.query('product').model.create(products);
-    // } catch (error) {
-    //   console.log('ERROR', error);
-    // }
+    let products = [];
+    for (let i = 0; i < faker.random.number({ min: 1000, max: 3000 }); i++) {
+      products.push(generateProduct());
+    }
+    try {
+      // const found = await strapi.query('product').model.find();
+      // console.log(found.length);
+      await strapi.query('product').model.create(products);
+    } catch (error) {
+      console.log('ERROR', error);
+    }
   },
 };
