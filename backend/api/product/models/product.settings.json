@@ -10,10 +10,12 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "product_description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "price": {
       "type": "decimal"

@@ -1,6 +1,5 @@
 "use strict";
 const faker = require("faker");
-const { default: createStrapi } = require("strapi");
 
 /**
  * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
@@ -60,16 +59,17 @@ function generateProduct() {
 
 module.exports = {
   async create(ctx) {
-    let products = [];
-    for (let i = 0; i < faker.random.number({ min: 1000, max: 3000 }); i++) {
-      products.push(generateProduct());
-    }
-    try {
-      const found = await strapi.query('product').model.find();
-      console.log(found.length);
-      // await strapi.query('product').model.create(products);
-    } catch (error) {
-      console.log('ERROR', error);
-    }
+    console.log('LOG THE TING');
+    // let products = [];
+    // for (let i = 0; i < faker.random.number({ min: 1000, max: 3000 }); i++) {
+    //   products.push(generateProduct());
+    // }
+    // try {
+    //   const found = await strapi.query('product').model.find();
+    //   console.log(found.length);
+    //   // await strapi.query('product').model.create(products);
+    // } catch (error) {
+    //   console.log('ERROR', error);
+    // }
   },
 };
