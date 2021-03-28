@@ -6,15 +6,25 @@ export default function Navigation({ navItems, error }) {
     return <div>An error occured: {error.message}</div>;
   }
   return (
-    <nav className="border-b border-t border-red-100 text-center flex items-center justify-center">
-      {
-        navItems
-          && navItems.map(
-            (navItem, index) => <Link href={`/${navItem}`} key={`nav-item-${index}`}>
-              <a className="p-2 mx-1 text-sm hover:bg-red-100 transition duration-100 ease-in">{navItem}</a>
-            </Link>
-          )
-      }
+    <nav className="mx-10 border-b border-t border-red-100 text-center flex items-center justify-center mb-5">
+      <div className="mr-auto">
+        <Link href="/">
+          <a>Apparel<span className="font-bold text-red-400">4</span>U</a>
+        </Link>
+      </div>
+      <div className="flex">
+        {
+          navItems
+            && navItems.map(
+              (navItem, index) => <Link href={navItem.src} key={`nav-item-${index}`}>
+                <a className="p-2 mx-1 text-sm hover:bg-red-100 transition duration-100 ease-in">{navItem.name}</a>
+              </Link>
+            )
+        }
+      </div>
+      <div className="ml-auto">
+        <p>//CART\\</p>
+      </div>
     </nav>
   )
 }

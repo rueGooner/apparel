@@ -12,7 +12,12 @@ export default function index({ navItems }) {
 
 export async function getStaticProps() {
   const response = await axios.get('http://localhost:1337/categories');
-  const navItems = response.data.map(a => a.name);
+  const navItems = response.data.map(a => {
+    return {
+      name: a.name,
+      src: a.path
+    }
+  });
   console.log(navItems);
   return {
     props: { navItems }

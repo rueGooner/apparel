@@ -13,8 +13,11 @@
       "type": "string"
     },
     "products": {
-      "via": "categories",
-      "collection": "product"
+      "collection": "product",
+      "via": "categories"
+    },
+    "path": {
+      "type": "string"
     }
   }
 }
