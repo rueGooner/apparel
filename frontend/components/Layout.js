@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Carousel from './Carousel'
 import Header from './Header'
 import Navigation from './Navigation'
 
@@ -14,7 +13,7 @@ export default function Layout({ children, navItems }) {
       </Head>
       <Header />
       <Navigation navItems={navItems} />
-      <Carousel />
+
       <main className="flex flex-col items-center justify-center mt-10">
         <h1 className="">
           Welcome to <a href="https://nextjs.org">Next.js!</a>

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discounts",
+  "info": {
+    "name": "Discount"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "percent": {
+      "type": "integer",
+      "max": 100,
+      "min": 5
+    },
+    "products": {
+      "via": "discount",
+      "collection": "product"
+    }
+  }
+}

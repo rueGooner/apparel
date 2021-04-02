@@ -39,8 +39,8 @@
       "type": "string"
     },
     "categories": {
-      "via": "products",
       "collection": "category",
+      "via": "products",
       "dominant": true
     },
     "sizes": {
@@ -50,6 +50,10 @@
     },
     "colours": {
       "collection": "colour",
+      "via": "products"
+    },
+    "discount": {
+      "model": "discount",
       "via": "products"
     }
   }

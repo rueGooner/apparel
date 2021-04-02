@@ -13,11 +13,25 @@
       "type": "string"
     },
     "products": {
-      "collection": "product",
-      "via": "categories"
+      "via": "categories",
+      "collection": "product"
     },
     "path": {
       "type": "string"
+    },
+    "isFeatured": {
+      "type": "boolean"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

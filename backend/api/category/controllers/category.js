@@ -5,4 +5,9 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+  findFeaturedCategories: async ctx => {
+    const findFeaturedCategories = await strapi.query('category').model.find({ isFeatured: true });
+    return findFeaturedCategories;
+  }
+};
