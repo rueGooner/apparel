@@ -1,20 +1,21 @@
 import React from 'react'
-import axios from 'axios'
+import { axiosAPI } from '../services/api'
+import { fetchFeaturedProducts } from '../utils/featured-carousel'
 import Layout from '../components/Layout'
 import Carousel from '../components/Carousel'
 import FeaturedCategories from '../components/FeaturedCategories'
 
-export default function index({ navItems }) {
+export default function index({ navItems, featuredProducts }) {
   return (
     <Layout navItems={navItems}>
-      <Carousel />
+      <Carousel featuredProducts={featuredProducts} />
       <FeaturedCategories />
     </Layout>
   )
 }
-
 export async function getStaticProps() {
-  const response = await axios.get('http://localhost:1337/categories');
+  const response = await axiosAPI('/categories');
+  const featuredProducts = await fetchFeaturedProducts('/home');
   const navItems = response.data.map(a => {
     return {
       name: a.name,
@@ -22,9 +23,7 @@ export async function getStaticProps() {
       src: a.image ? a.image.url : null
     }
   });
-  const featured = response.data.filter(a => a.isFeatured);
-  console.log(featured);
   return {
-    props: { navItems }
+    props: { navItems, featuredProducts }
   };
 }

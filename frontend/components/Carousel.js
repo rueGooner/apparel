@@ -1,22 +1,29 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade, Autoplay } from "swiper";
+import CarouselCard from "./cards/CarouselCard";
 
 SwiperCore.use([EffectFade]);
 SwiperCore.use([Autoplay]);
 
-export default function Carousel() {
+export default function Carousel({ featuredProducts }) {
   return (
-    <Swiper spaceBetween={50} slidesPerView={1} autoplay={{ delay: 3500 }} effect="fade">
-      {[
-        "https://picsum.photos/2000/700?grayscale",
-        "https://picsum.photos/2000/700?blur",
-        "https://picsum.photos/2000/700?blur=2",
-        "https://picsum.photos/2000/700?grayscale",
-      ].map((link, i) => {
+    <Swiper
+      className="max-w-4xl mx-auto h-96"
+      spaceBetween={50}
+      slidesPerView={1}>
+      {featuredProducts.map((featuredProduct, i) => {
         return (
           <SwiperSlide key={i}>
-            <img src={link} />
+            <div className="grid grid-rows-2 grid-cols-3 gap-1 h-full" >
+              {
+                featuredProduct && featuredProduct.map((product, index) => {
+                  return (
+                    <CarouselCard product={product} index={index} />
+                  )
+                })
+              }
+            </div>
           </SwiperSlide>
         );
       })}

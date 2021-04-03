@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_carousels",
+  "info": {
+    "name": "Brand Carousel"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "products": {
+      "collection": "product"
+    },
+    "page": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

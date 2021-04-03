@@ -49,11 +49,11 @@ function generateProduct() {
     colours: faker.random.arrayElements(colours),
     brand: faker.random.arrayElement(brands),
     categories: faker.random.arrayElements(categories),
-    featured: faker.random.boolean(),
-    sale: faker.random.boolean(),
-    main_image: faker.random.image(),
-    gallery_image_1: faker.random.image(),
-    gallery_image_2: faker.random.image(),
+    featured: faker.datatype.boolean(),
+    sale: faker.datatype.boolean(),
+    main_image: faker.random.image(560, 540),
+    gallery_image_1: faker.random.image(560, 540),
+    gallery_image_2: faker.random.image(560, 540),
   };
 }
 
@@ -61,7 +61,7 @@ module.exports = {
   async create(ctx) {
     console.log('LOG THE TING');
     let products = [];
-    for (let i = 0; i < faker.random.number({ min: 1000, max: 3000 }); i++) {
+    for (let i = 0; i < faker.datatype.number({ min: 1000, max: 3000 }); i++) {
       products.push(generateProduct());
     }
     try {

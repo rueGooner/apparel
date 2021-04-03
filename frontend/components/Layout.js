@@ -15,9 +15,6 @@ export default function Layout({ children, navItems }) {
       <Navigation navItems={navItems} />
 
       <main className="flex flex-col items-center justify-center mt-10">
-        <h1 className="">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
         {children}
       </main>
 
