@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from './Header'
 import Navigation from './Navigation'
 
-export default function Layout({ children, navItems }) {
+export default function Layout({ children, navigation }) {
   return (
     <div className="mx-auto min-h-screen h-screen flex flex-col">
       <Head>
@@ -12,9 +12,9 @@ export default function Layout({ children, navItems }) {
         <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&amp;display=swap" rel="stylesheet"></link>
       </Head>
       <Header />
-      <Navigation navItems={navItems} />
+      <Navigation navigation={navigation} />
 
-      <main className="flex flex-col items-center justify-center mt-10">
+      <main className="flex flex-col items-center justify-center">
         {children}
       </main>
 

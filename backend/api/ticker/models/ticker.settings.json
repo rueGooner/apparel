@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickers",
+  "info": {
+    "name": "Ticker"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "page": {
+      "type": "string"
+    },
+    "products": {
+      "collection": "product",
+      "via": "ticker"
+    }
+  }
+}

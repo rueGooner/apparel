@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "components",
+  "info": {
+    "name": "Components"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": false
+    },
+    "products": {
+      "collection": "product"
+    },
+    "page": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

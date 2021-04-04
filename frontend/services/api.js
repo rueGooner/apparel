@@ -9,3 +9,9 @@ export async function axiosAPI(path) {
   const response = await axios.get(endpoint);
   return response;
 }
+
+export async function fetchPageContent(page) {
+  const endpoint = await getBackendPoint(page);
+  const response = await axios.get(endpoint);
+  return response;
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_carousels",
+  "info": {
+    "name": "Product Carousel"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "page": {
+      "type": "string"
+    },
+    "products": {
+      "collection": "product"
+    }
+  }
+}

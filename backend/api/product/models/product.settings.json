@@ -55,6 +55,10 @@
     "discount": {
       "model": "discount",
       "via": "products"
+    },
+    "ticker": {
+      "via": "products",
+      "model": "ticker"
     }
   }
 }
